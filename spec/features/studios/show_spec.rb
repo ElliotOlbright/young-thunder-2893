@@ -16,5 +16,6 @@ describe 'Studios Index page' do
 
   it 'can take user to movie show page' do 
     click_link("#{@universal.movies.first.title}")
+    expect(current_path).to eq("/movies/#{@universal.id}/#{@universal.movies.first.id}")
   end
 end 
