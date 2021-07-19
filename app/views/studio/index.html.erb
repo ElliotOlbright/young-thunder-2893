@@ -2,8 +2,8 @@
 
 
 <% @studios.each do |studio| %>
-  <h2> <%= studio.name %> </h2>
-  <% studio.movies.each do |movie| %>
+  <h2> <%= link_to "#{studio.name}", "/studios/#{studio.id}", method: :get %> </h2>
+  <% studio.movies.all.each do |movie| %>
   <%= movie.title %>
   <% end %>
 <% end %>

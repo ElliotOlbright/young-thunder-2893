@@ -22,4 +22,9 @@ describe 'Studios Index page' do
     expect(page).to have_content("#{@universal.name}")
     expect(page).to have_content("#{@universal.movies.first.title}")
   end 
+
+  it 'can take user to studio show page' do 
+    click_link("#{@universal.name}")
+    expect(current_path).to eq("/studios'#{@universal.id}")
+  end 
 end 
