@@ -20,5 +20,6 @@ describe 'Studios Index page' do
 
   it 'can display studio names and movies' do 
     expect(page).to have_content("#{@universal.name}")
+    expect(page).to have_content("#{@universal.movies.first.title}")
   end 
 end 
