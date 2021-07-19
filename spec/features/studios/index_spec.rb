@@ -25,6 +25,6 @@ describe 'Studios Index page' do
 
   it 'can take user to studio show page' do 
     click_link("#{@universal.name}")
-    expect(current_path).to eq("/studios'#{@universal.id}")
+    expect(current_path).to eq("/studios/#{@universal.id}")
   end 
 end 
