@@ -6,15 +6,11 @@ describe 'Studios Index page' do
     @universal.movies.create(title: 'Raiders of the Lost Ark', creation_year: 1981, genre: 'Action/Adventure')
     @universal.movies.create(title: 'Shrek', creation_year: 2001, genre: 'Comedy')
 
-    visit "/studios/#{@universal.id}"
+    visit "/studios"
   end
 
-  it 'can see page' do 
-    expect(current_path).to eq("/studios/#{@universal.id}")
-    expect(page).to have_content('Studio Show Page')
-  end 
-
-  it 'can take user to movie show page' do 
+  xit 'can take user to movie show page' do 
     click_link("#{@universal.movies.first.title}")
-  end
-end 
+    expect(current_path).to eq("/studios/#{@universal.id}/")
+  end 
+end
