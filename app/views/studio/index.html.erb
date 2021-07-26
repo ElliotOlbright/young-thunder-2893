@@ -1,8 +1,8 @@
 <h1>Studio Index Page</h1>
 
-
 <% @studios.each do |studio| %>
   <h2> <%= link_to "#{studio.name}", "/studios/#{studio.id}", method: :get %> </h2>
+  <%= studio.location %>
   <% studio.movies.all.each do |movie| %>
   <%= movie.title %>
   <% end %>

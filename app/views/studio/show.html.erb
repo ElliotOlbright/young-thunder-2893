@@ -1,5 +1,5 @@
 <h1>Studio Show Page</h1>
 
 <% @studio.movies.each do |movie| %>
-  <%= link_to "#{movie.title}", "/movies/#{@studio.id}/#{movie.id}", method: :get %>
+  <%= link_to "#{movie.title}", "/movies/#{movie.id}", method: :get %>
 <% end %>

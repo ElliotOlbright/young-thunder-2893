@@ -4,3 +4,19 @@
 <%= @movie.title %><br>
 <%= @movie.creation_year %><br>
 <%= @movie.genre %><br>
+
+<h3>Add Actor To this movie</h3>
+
+<%= form_tag "/movies/#{@movie.id}/actors", method: :post do %>
+  <%= label_tag :actor_name, 'Actor Name' %>
+  <%= text_field_tag :actor_name %><br>
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+<h3>Average actors age: <%= @movie.average_age %></h3>
+
+<h3>Actors orderd by age</h3>
+<% @movie.actors_ages.each do |actor| %>
+  <%= actor.name %>
+  <%= actor.age %>
+<% end %>
